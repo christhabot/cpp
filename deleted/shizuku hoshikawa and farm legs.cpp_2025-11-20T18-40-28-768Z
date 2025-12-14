@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+typedef long long ll;
+ 
+int main() 
+{
+    int amountq, amount;
+    scanf("%d", &amountq);
+    while(amountq--)
+    {
+        scanf("%d", &amount);
+        printf("%d\n", amount % 2 ? 0 : amount/4+1);
+    }
+}

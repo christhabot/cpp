@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+typedef long long ll;
+
+vector<int> vec;
+
+int main() 
+{
+    int amountq, amount;
+    scanf("%d", &amountq);
+    while(amountq--)
+    {
+        scanf("%d", &amount);
+        vec.clear();
+        vec.resize(amount);
+        for(int i = 0; i < amount; i++)
+        {
+            scanf("%d", &vec[i]);
+        }
+        printf("%d\n", abs((vec[0] == -1 ? max(vec[amount-1], 0) : vec[0]) - (vec[amount-1] == -1 ? max(vec[0], 0) : vec[amount-1])));
+        printf("%d ", vec[0] == -1 ? max(vec[amount-1], 0) : vec[0]);
+        for(int i = 1; i < amount-1; i++)
+        {
+            printf("%d ", max(0, vec[i]));
+        }
+        printf("%d\n", vec[amount-1] == -1 ? max(vec[0], 0) : vec[amount-1]);
+    }
+}

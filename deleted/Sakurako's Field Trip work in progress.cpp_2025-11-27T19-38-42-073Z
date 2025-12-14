@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+typedef long long ll;
+
+vector<ll> vec;
+vector<vector<ll>> memo;
+
+int main() 
+{
+    int amountq, amount, thing;
+    scanf("%d", &amountq);
+    while(amountq--)
+    {
+        scanf("%d", &amount);
+        vec.resize(amount);
+        for(int i = 0; i < amount; i++)
+        {
+            scanf("%d", &vec[i]);
+        }
+        memo.assign(amount, vector<ll>(2, -1));
+        if(amount % 2)
+        {
+            memo[amount/2][0] = 0;
+            memo[amount/2][1] = 0;
+        }
+        else
+        {
+            thing = vec[amount/2-1] == vec[amount/2] ? 1 : 0;
+            memo[amount/2-1][0] = thing;
+            memo[amount/2-1][1] = thing;
+        }
+        for(int i = amount/2-2; i >= 0; i--)
+        {
+            if(vec[i] == vec[amount-i-1])
+            {
+                
+            }
+        }
+    }
+}
